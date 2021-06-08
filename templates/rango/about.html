@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load static %} <!-- New line -->
+<html>
+  <head>
+    <title>Rango</title>
+  </head>
+  <body>
+    <h1>Rango says this tutorial wa put together by {{ name }}</h1>
+    <div>
+      <a href="rango/">Home</a><br/>
+      <img src="{{ MEDIA_URL }}Rango.jpg" alt="media files"/>Served as media file.
+    </div>
+  </body>
+</html>
