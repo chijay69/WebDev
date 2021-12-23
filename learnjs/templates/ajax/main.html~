@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}My blog{% endblock %}
+{% block left %}
+<div>
+  <button class="btn btn-success btn-lg"> GET </button>
+  <ul id="seconds">
+  </ul>
+</div>
+{% endblock left %}
+{% block right %}
+<div>
+  <ul id="right">
+    
+  </ul>
+</div>
+{% endblock right %}

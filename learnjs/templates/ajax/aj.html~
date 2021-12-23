@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+{% endblock %}
+{% block script %}
+{% endblock %}
+{% block title %}My blog{% endblock %}
+{% block left %}
+<div>
+  <button class="btn btn-success btn-lg btn-get-data"> GET DATA </button>
+  <ul id="seconds">
+  </ul>
+</div>
+{% endblock %}
+{% block right %}
+<div>
+  <ul id="right">
+    
+  </ul>
+  <h1>List of Profiles</h1>
+  <div class="content-data mt-4" data-url="{% url 'data' %}">
+    
+  </div>
+  <ul id="display-data">
+    {% for value in profile_values %}
+    <li>{{ value }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+{% block script_footer %}
+<script>
+  $('.btn-get-data').on('click', function(){
+      $.ajax({
+	  type: 'GET',
+	  url: $('.content-data').data('url'),
+	  dataType:'json',
+	  success: function(response){
+	      $('.content-data').html(response);
+	  },
+	  error: function(response){
+	      console.log('something went wrong');
+	      alert("e b tinz");
+	  },
+      });
+  });
+</script>
+{% endblock %}
